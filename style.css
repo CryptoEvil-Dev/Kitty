@@ -78,7 +78,7 @@
     height: 50vh;
     background-color: black;
 
-    animation: slidein 60s linear infinite alternate;
+    animation: slidein 30s linear infinite alternate;
     box-shadow: 0px 0px 5px 5px black;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -139,9 +139,9 @@
 
 @keyframes slidein{
     from {
-        margin-left: 0%;
+        margin-left: 0;
     }
     to{
-        margin-left: -335%;
+        margin-left: -340vw;
     }
 }

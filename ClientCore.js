@@ -9,9 +9,10 @@ window.addEventListener("mouseout", (e) =>{
     }
 });
 
+let elemheight = document.querySelector(".page_1").offsetHeight;
 
 let scrolled = 0;
-let pages = [0,980, 980 * 2, 980 * 3, 980 * 4, 980 * 5];
+let pages = [0, elemheight, elemheight * 2, elemheight * 3, elemheight * 4, elemheight * 5];
 window.scroll(0,0);
 
 
@@ -36,6 +37,8 @@ window.addEventListener("click", (e) =>{
 
         if (e.target.id === "down_page") {
             scrolled = scrolled + 1;
+            elemheight = document.querySelector(".page_1").offsetHeight;
+            pages = [0, elemheight, elemheight * 2, elemheight * 3, elemheight * 4, elemheight * 5];
             if (scrolled >= pages.length) {
                 scrolled = pages.length - 1;
             }
