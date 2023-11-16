@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
     
 }
 .page_1{
@@ -71,17 +73,19 @@
 }
 
 .img-holder{
-    width: 200vw;
-    height: 65vh;
+    width: 500vw;
+    height: 50vh;
     background-color: black;
 
-    animation: slidein 10s ease-in-out infinite alternate;
+    animation: slidein 60s linear infinite alternate;
     box-shadow: 0px 0px 5px 5px black;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 .img-holder img{
     width: 30vh;
     transition: .5s ease;
-    margin-top: 15vh;
+    
 }
 .img-holder img:hover{
     width: 35vh;
@@ -89,10 +93,6 @@
 
 .paused {
     animation-play-state: paused;
-}
-
-#placeholder {
-    height: 150vh; /* Добавляем высоту, чтобы было место для прокрутки */
 }
 
 
@@ -141,6 +141,6 @@
         margin-left: 0%;
     }
     to{
-        margin-left: -90%;
+        margin-left: -335%;
     }
 }

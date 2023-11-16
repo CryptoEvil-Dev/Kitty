@@ -20,6 +20,7 @@ window.addEventListener("click", (e) =>{
             `
             viewport.classList.add("IMGViewer");
             document.body.appendChild(viewport);
+
             window.addEventListener("click", (e) => {
                 if(e.target.id === "viewport-img"){
                     document.body.removeChild(viewport);
@@ -30,3 +31,16 @@ window.addEventListener("click", (e) =>{
         console.log("Произошла ошибка, но это тупо заглушка)")
     }
 })
+
+let scrolled = 0;
+
+window.addEventListener("click", (e) => {
+    if(e.target.id === "down_page"){
+        window.scroll(0, scrolled + 980);
+        scrolled = window.scrollY;
+    }
+    if(e.target.id === "top_page"){
+        window.scroll(0, scrolled - 980);
+        scrolled = window.scrollY;
+    }
+});
