@@ -9,7 +9,8 @@
 .page_1{
     width: 100vw;
     height: 101vh;
-    background-color: rgb(243, 243, 243);
+    background: linear-gradient(to right, rgb(255, 0, 149), rgb(120, 10, 209), rgb(202, 65, 131));
+    color: white;
 }
 .page_2{
     width: 100vw;

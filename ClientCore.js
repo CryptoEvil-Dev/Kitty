@@ -9,8 +9,13 @@ window.addEventListener("mouseout", (e) =>{
     }
 });
 
+
+let scrolled = 0;
+let pages = [0,980, 980 * 2, 980 * 3, 980 * 4, 980 * 5];
+window.scroll(0,0);
+
+
 window.addEventListener("click", (e) =>{
-    try{
         let viewport = document.createElement("div");
         if(e.target.id === "header_img_1"){
             //console.log(e.target.src);
@@ -27,20 +32,23 @@ window.addEventListener("click", (e) =>{
                 }
             });
         }
-    } catch {
-        console.log("Произошла ошибка, но это тупо заглушка)")
-    }
+
+
+        if (e.target.id === "down_page") {
+            scrolled = scrolled + 1;
+            if (scrolled >= pages.length) {
+                scrolled = pages.length - 1;
+            }
+            window.scroll(0, pages[scrolled]);
+            console.log("Вниз");
+        }
+    
+        if (e.target.id === "top_page") {
+            scrolled = scrolled - 1;
+            if (scrolled < 0) {
+                scrolled = 0;
+            }
+            window.scroll(0, pages[scrolled]);
+            console.log("Вверх");
+        }
 })
-
-let scrolled = 0;
-
-window.addEventListener("click", (e) => {
-    if(e.target.id === "down_page"){
-        window.scroll(0, scrolled + 980);
-        scrolled = window.scrollY;
-    }
-    if(e.target.id === "top_page"){
-        window.scroll(0, scrolled - 980);
-        scrolled = window.scrollY;
-    }
-});
